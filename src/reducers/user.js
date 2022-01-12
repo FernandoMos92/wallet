@@ -1,1 +1,8 @@
-// Esse reducer será responsável por tratar as informações da pessoa usuária
+const LOGIN_USER = 'LOGIN_USER';
+
+const userLogin = (email) => ({
+  type: LOGIN_USER,
+  payload: email,
+});
+
+export default userLogin;
