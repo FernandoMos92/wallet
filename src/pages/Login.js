@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Main from '../style/styledComponents';
+import * as act from '../actions';
 import Money from '../image/undraw_wallet_aym5.svg';
 import '../style/login.css';
 
@@ -44,6 +47,9 @@ class Login extends React.Component {
       password,
       rememberMe,
       controlBtn,
+    },
+    props: {
+      loginAdd,
     } } = this;
 
     return (
@@ -80,13 +86,16 @@ class Login extends React.Component {
               />
             </label>
           </div>
-          <button
-            disabled={ controlBtn }
-            type="submit"
-            style={ controlBtn ? { color: 'red' } : { color: 'rgb(108,99,255)' } }
-          >
-            Entrar
-          </button>
+          <Link to="/carteira">
+            <button
+              disabled={ controlBtn }
+              type="button"
+              style={ controlBtn ? { color: 'red' } : { color: 'rgb(108,99,255)' } }
+              onClick={ () => loginAdd(emailUser) }
+            >
+              Entrar
+            </button>
+          </Link>
         </form>
         <img src={ Money } alt="You wallet login" />
       </Main>
@@ -94,12 +103,14 @@ class Login extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log(state);
-};
+const mapStateToProps = (state) => state;
 
-const mapDispatchToProps = (dispatch) => {
-  console.log(dispatch);
-};
+const mapDispatchToProps = (dispatch) => ({
+  loginAdd: (inputValue) => dispatch(act.userLogin(inputValue)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
+
+Login.propTypes = {
+  loginAdd: PropTypes.func.isRequired,
+};
