@@ -1,8 +1,16 @@
-const LOGIN_USER = 'LOGIN_USER';
+import { LOGIN_USER } from '../actions';
 
-const userLogin = (email) => ({
-  type: LOGIN_USER,
-  payload: email,
-});
+const INITIAL_STATE = {
+  email: '',
+};
 
-export default userLogin;
+const userReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+  case LOGIN_USER:
+    return { ...state, email: [action.payload] };
+  default:
+    return state;
+  }
+};
+
+export default userReducer;

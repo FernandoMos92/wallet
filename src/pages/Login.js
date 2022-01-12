@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Main from '../style/styledComponents';
 import Money from '../image/undraw_wallet_aym5.svg';
 import '../style/login.css';
@@ -93,4 +94,12 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+  console.log(state);
+};
+
+const mapDispatchToProps = (dispatch) => {
+  console.log(dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
