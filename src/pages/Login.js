@@ -4,7 +4,6 @@ import Money from '../image/undraw_wallet_aym5.svg';
 import '../style/login.css';
 
 class Login extends React.Component {
-
   constructor() {
     super();
     this.state = {
