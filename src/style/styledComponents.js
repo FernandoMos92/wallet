@@ -13,6 +13,7 @@ form{
   flex-flow: column nowrap;
   align-items: center;
   padding: 30px;
+  user-select: none;
 
   input{ 
     align-self: flex-end;
@@ -23,6 +24,7 @@ form{
     width: 240px;
     margin-bottom: 15px;
     outline: none;
+    user-select: none;
   }
 
   button{ 
@@ -32,6 +34,7 @@ form{
     background-color: rgb(80,79,96);
     color: rgb(141,208,112);
     border-radius: 4px;
+    user-select: none;
   }
 }
 `;
