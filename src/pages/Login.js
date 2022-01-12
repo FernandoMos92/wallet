@@ -22,13 +22,16 @@ class Login extends React.Component {
   }
 
   handlePassword({ target }) {
-    const { controlBtn } = this.state;
+    const { controlBtn, emailUser } = this.state;
     const caracterAmount = target.value.length;
     const minNumber = 6;
 
+    const emailContains = '@';
+    const emailConts = '.com';
+    const result = emailUser.includes(emailContains) && emailUser.includes(emailConts);
+
     this.setState({ password: target.value }, () => {
-      if (caracterAmount >= minNumber) {
-        console.log('ENTROU');
+      if (caracterAmount >= minNumber && result === true) {
         this.setState({ controlBtn: !controlBtn });
       }
     });
