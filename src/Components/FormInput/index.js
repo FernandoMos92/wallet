@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-
-const FormCur = styled.form`
-background-color: whitesmoke;
-border-bottom: 2px groove white;
-padding: 15px;
-`;
+import { connect } from 'react-redux';
+import { FormCur } from '../../style/styledComponents';
 
 class FormInput extends Component {
+  constructor() {
+    super();
+    this.state = {
+      id: 0,
+      spent: 0,
+      description: '',
+      currencyCoin: '',
+      methodPag: '',
+      tag: '',
+    };
+
+    this.saveInfo = this.saveInfo.bind(this);
+  }
+
+  saveInfo({ target: { name, value } }) {
+    this.setState({ [name]: value });
+  }
+
   render() {
-    const { props: { saveInfo } } = this;
+    const { saveInfo } = this;
     return (
       <FormCur>
         <label htmlFor="value-input">
@@ -72,4 +85,4 @@ class FormInput extends Component {
   }
 }
 
-export default FormInput;
+export default connect()(FormInput);

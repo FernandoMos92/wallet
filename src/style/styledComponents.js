@@ -42,4 +42,33 @@ form{
 }
 `;
 
-export default Main;
+const FormCur = styled.form`
+display: flex;
+justify-content: space-between;
+background-color: whitesmoke;
+border-bottom: 2px groove white;
+padding: 15px;
+
+  input{
+    margin: 5px 5px;
+  }
+
+  select {
+    margin: 5px 5px;
+  }
+
+  button {
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    background-color: rgb(80,79,96);
+    color: rgb(141,208,112);
+    font-weight: 800;
+  }
+`;
+
+export {
+  Main,
+  FormCur,
+};
