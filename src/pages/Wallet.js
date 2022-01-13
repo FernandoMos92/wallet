@@ -11,8 +11,15 @@ class Wallet extends Component {
   constructor() {
     super();
     this.state = {
-
+      id: 0,
+      spent: 0,
+      description: '',
+      currencyCoin: '',
+      methodPag: '',
+      tag: '',
     };
+
+    this.saveInfo = this.saveInfo.bind(this);
   }
 
   componentDidMount() {
@@ -22,11 +29,23 @@ class Wallet extends Component {
     return notify();
   }
 
+  saveInfo({ target: { name, value } }) {
+    this.setState({ [name]: value });
+  }
+
   render() {
+    const { saveInfo, state: {
+      id,
+      spent,
+      description,
+      currencyCoin,
+      methodPag,
+      tag } } = this;
+    console.log(this);
     return (
       <div>
         <Header />
-        <FormInput />
+        <FormInput saveInfo={ saveInfo } />
       </div>
     );
   }

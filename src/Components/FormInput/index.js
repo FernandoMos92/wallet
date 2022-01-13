@@ -9,6 +9,7 @@ padding: 15px;
 
 class FormInput extends Component {
   render() {
+    const { props: { saveInfo } } = this;
     return (
       <FormCur>
         <label htmlFor="value-input">
@@ -60,7 +61,10 @@ class FormInput extends Component {
             <option value="Saude">Saúde</option>
           </select>
         </label>
-        <button type="button">
+        <button
+          type="button"
+          onClick={ () => saveInfo() }
+        >
           Adicionar despesa
         </button>
       </FormCur>
