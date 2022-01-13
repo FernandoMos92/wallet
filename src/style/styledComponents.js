@@ -68,7 +68,33 @@ padding: 15px;
   }
 `;
 
+const Hder = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: whitesmoke;
+  border-bottom: 2px groove white;
+`;
+
+const Img = styled.img`
+  width: 20%;
+  padding: 25px;
+`;
+
+const Span = styled.span`
+margin: 0 10px;
+`;
+
+const BRL = styled.span`
+margin: 0 7px;
+font-weight: 700;
+`;
+
 export {
   Main,
   FormCur,
+  Hder,
+  Img,
+  Span,
+  BRL,
 };

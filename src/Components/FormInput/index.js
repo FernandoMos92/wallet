@@ -1,38 +1,73 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { FormCur } from '../../style/styledComponents';
+import { apiThunk } from '../../actions';
+import requestApi from '../../services';
+import { string } from 'stylelint/lib/formatters';
 
 class FormInput extends Component {
   constructor() {
     super();
     this.state = {
-      id: 0,
       value: '',
       description: '',
-      currency: '',
-      method: '',
-      tag: '',
-      exchangeRates: {},
+      currency: 'BTC',
+      method: 'Dinheiro',
+      tag: 'Alimentacao',
     };
 
     this.handleData = this.handleData.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleData({ target: { name, value } }) {
+  componentDidMount() {
+    this.requestAPI();
+  }
+
+  requestAPI() {
+    requestApi();
+  }
+
+  handleData({ target }) {
+    const { name, value } = target;
     this.setState({ [name]: value });
   }
 
+  handleClick() {
+    const { state: { value, description, currency, method, tag },
+      props: { returnApi, expenses } } = this;
+    const id = expenses.length;
+    const obj = {
+      id,
+      value,
+      description,
+      currency,
+      method,
+      tag,
+    };
+    returnApi(obj);
+    this.setState({
+      value: '',
+      description: '',
+      currency: 'BTC',
+      method: 'Dinheiro',
+      tag: 'Alimentação',
+    });
+  }
+
   render() {
-    console.log(this.state);
     const {
       state: {
-        id,
         value,
         description,
         currency,
         method,
         tag,
-      }, handleData } = this;
+      },
+      props: { currencies },
+      handleClick,
+      handleData } = this;
     return (
       <FormCur>
         <label htmlFor="value-input">
@@ -56,23 +91,32 @@ class FormInput extends Component {
             onChange={ handleData }
           />
         </label>
+
         <label htmlFor="currency-input">
           Moeda:
           <select
+            id="currency-input"
             name="currency"
             value={ currency }
             data-testid="currency-input"
             type="select"
             onChange={ handleData }
           >
-            <option value="USD">USD</option>
-            <option value="BTC">BTC</option>
-            <option value="EUR">EUR</option>
+            { currencies.map((coin, index) => (
+              <option
+                value={ coin }
+                key={ index }
+              >
+                {coin}
+              </option>
+            ))}
           </select>
         </label>
+
         <label htmlFor="method-input">
           Método de pagamento:
           <select
+            id="method-input"
             name="method"
             value={ method }
             data-testid="method-input"
@@ -84,12 +128,14 @@ class FormInput extends Component {
             <option value="Cartão de débito">Cartão de débito</option>
           </select>
         </label>
+
         <label htmlFor="tag-input">
           Tag:
           <select
+            id="tag-input"
+            data-testid="tag-input"
             name="tag"
             value={ tag }
-            data-testid="tag-input"
             type="select"
             onChange={ handleData }
           >
@@ -100,8 +146,10 @@ class FormInput extends Component {
             <option value="Saúde">Saúde</option>
           </select>
         </label>
+
         <button
           type="button"
+          onClick={ () => handleClick() }
         >
           Adicionar despesa
         </button>
@@ -110,4 +158,25 @@ class FormInput extends Component {
   }
 }
 
-export default connect()(FormInput);
+const mapDispatchToProps = (dispatch) => ({
+  returnApi: (objt) => dispatch(apiThunk(objt)),
+});
+
+const mapStateToProps = (state) => ({
+  expenses: state.wallet.expenses,
+  currencies: state.wallet.currencies,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormInput);
+
+FormInput.propTypes = {
+  currencies: PropTypes.arrayOf(string).isRequired,
+  returnApi: PropTypes.func.isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    value: PropTypes.string,
+    description: PropTypes.string,
+    method: PropTypes.string,
+    tag: PropTypes.string,
+  })).isRequired,
+};

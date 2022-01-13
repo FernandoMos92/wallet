@@ -1,4 +1,4 @@
-import responseAPI from '../services/index';
+import requestApi from '../services/index';
 
 export const LOGIN_USER = 'LOGIN_USER';
 export const GET_COIN = 'GET_COIN';
@@ -19,6 +19,9 @@ export const saveExpenses = (payload) => ({
   payload,
 });
 
-export const requestAPI = () => (dispatch) => {
-  responseAPI.then((coin) => dispatch(saveExpenses(coin)));
+export const apiThunk = (objt) => (dispatch) => {
+  requestApi().then((coin) => {
+    const result = { ...objt, exchangeRates: coin };
+    dispatch(saveExpenses(result));
+  });
 };
