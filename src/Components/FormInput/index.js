@@ -169,7 +169,7 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, mapDispatchToProps)(FormInput);
 
 FormInput.propTypes = {
-  currencies: PropTypes.arrayOf(string).isRequired,
+  currencies: PropTypes.arrayOf([]).isRequired,
   returnApi: PropTypes.func.isRequired,
   expenses: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
