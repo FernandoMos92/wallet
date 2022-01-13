@@ -12,6 +12,7 @@ class FormInput extends Component {
       currency: '',
       method: '',
       tag: '',
+      exchangeRates: {},
     };
 
     this.handleData = this.handleData.bind(this);
@@ -22,6 +23,7 @@ class FormInput extends Component {
   }
 
   render() {
+    console.log(this.state);
     const {
       state: {
         id,
