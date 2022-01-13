@@ -37,7 +37,6 @@ form{
     color: rgb(108,99,255);
     border-radius: 4px;
     user-select: none;
-    text-shadow: 1px 1px 1px #FFF;
   }
 }
 `;
