@@ -9,7 +9,8 @@ const Hder = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: darkgray;
+  background-color: whitesmoke;
+  border-bottom: 2px groove white;
 `;
 
 const Img = styled.img`
