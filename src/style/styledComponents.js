@@ -28,13 +28,16 @@ form{
   }
 
   button{ 
+    font-size: 28px;
     margin-top: 20px;
-    width: 150px;
+    width: 250px;
+    height: 50px;
     align-self: center;
     background-color: rgb(80,79,96);
-    color: rgb(141,208,112);
+    color: rgb(108,99,255);
     border-radius: 4px;
     user-select: none;
+    text-shadow: 1px 1px 1px #FFF;
   }
 }
 `;

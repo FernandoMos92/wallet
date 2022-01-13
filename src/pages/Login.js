@@ -90,7 +90,7 @@ class Login extends React.Component {
             <button
               disabled={ controlBtn }
               type="button"
-              style={ controlBtn ? { color: 'red' } : { color: 'rgb(108,99,255)' } }
+              style={ controlBtn ? { color: 'red' } : { color: 'rgb(141,208,112' } }
               onClick={ () => loginAdd(emailUser) }
             >
               Entrar
