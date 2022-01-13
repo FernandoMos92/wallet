@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { FormCur } from '../../style/styledComponents';
 import { apiThunk } from '../../actions';
 import requestApi from '../../services';
-import { string } from 'stylelint/lib/formatters';
 
 class FormInput extends Component {
   constructor() {
