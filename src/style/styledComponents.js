@@ -90,6 +90,52 @@ margin: 0 7px;
 font-weight: 700;
 `;
 
+const Sfooter = styled.footer`
+  display: flex;
+  justify-content:space-between;
+  width: 100vw;
+  background-color: rgb(80,79,96);
+  color: rgb(141,208,112);
+  position: absolute;
+  bottom: 0%;
+`;
+
+const Ssocial = styled.div`
+  padding: 10px;
+
+  h3{
+    font-size: 20px;
+  }
+  a{
+    color: rgb(141,208,112);
+    border-radius:  50%;
+    /* box-shadow: 0 -5px 2px whitesmoke; */
+  }
+
+  .icon-social-midia {
+   width: 40px;
+   height: 40px;
+  }
+`;
+
+const Sdiv = styled.div`
+  display: flex;
+  flex-flow: row nowrap center;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+const Sdata = styled.div`
+  padding: 10px;
+  text-align: center;
+`;
+
+const Syear = styled.p`
+text-align: center;
+margin-right: 18%;
+margin-top: 30px;
+`;
+
 export {
   Main,
   FormCur,
@@ -97,4 +143,9 @@ export {
   Img,
   Span,
   BRL,
+  Sfooter,
+  Ssocial,
+  Sdata,
+  Sdiv,
+  Syear,
 };

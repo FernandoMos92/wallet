@@ -6,6 +6,7 @@ import { Main } from '../style/styledComponents';
 import * as act from '../actions';
 import Money from '../image/undraw_wallet_aym5.svg';
 import '../style/login.css';
+import Footer from '../Components/Footer';
 
 class Login extends React.Component {
   constructor() {
@@ -13,7 +14,7 @@ class Login extends React.Component {
     this.state = {
       emailUser: '',
       password: '',
-      rememberMe: false,
+      // rememberMe: false,
       controlBtn: true,
     };
 
@@ -45,7 +46,7 @@ class Login extends React.Component {
     const { state: {
       emailUser,
       password,
-      rememberMe,
+      // rememberMe,
       controlBtn,
     },
     props: {
@@ -53,52 +54,55 @@ class Login extends React.Component {
     } } = this;
 
     return (
-      <Main>
-        <form>
-          <label htmlFor="inputEmail">
-            <input
-              value={ emailUser }
-              placeholder="Email"
-              type="text"
-              id="inputEmail"
-              data-testid="email-input"
-              onChange={ this.handleEmail }
-            />
-          </label>
-          <label htmlFor="inputPassword">
-            <input
-              value={ password }
-              placeholder="Password"
-              type="password"
-              id="inputPassword"
-              data-testid="password-input"
-              onChange={ this.handlePassword }
-            />
-          </label>
-          <div className="container-remember">
-            <label htmlFor="input-remember">
-              Lembre de mim?
+      <>
+        <Main>
+          <form>
+            <label htmlFor="inputEmail">
               <input
-                type="checkbox"
-                checked={ rememberMe }
-                className="input-remember"
-                id="input-remember"
+                value={ emailUser }
+                placeholder="Email"
+                type="text"
+                id="inputEmail"
+                data-testid="email-input"
+                onChange={ this.handleEmail }
               />
             </label>
-          </div>
-          <Link to="/carteira">
-            <button
-              disabled={ controlBtn }
-              type="button"
-              style={ controlBtn ? { color: 'red' } : { color: 'rgb(141,208,112' } }
-              onClick={ () => loginAdd(emailUser) }
-            >
-              Entrar
-            </button>
-          </Link>
-        </form>
-        <img src={ Money } alt="You wallet login" />
-      </Main>
+            <label htmlFor="inputPassword">
+              <input
+                value={ password }
+                placeholder="Password"
+                type="password"
+                id="inputPassword"
+                data-testid="password-input"
+                onChange={ this.handlePassword }
+              />
+            </label>
+            {/* <div className="container-remember">
+              <label htmlFor="input-remember">
+                Lembre de mim?
+                <input
+                  type="checkbox"
+                  checked={ rememberMe }
+                  className="input-remember"
+                  id="input-remember"
+                />
+              </label>
+            </div> */}
+            <Link to="/carteira">
+              <button
+                disabled={ controlBtn }
+                type="button"
+                style={ controlBtn ? { color: 'red' } : { color: 'rgb(141,208,112' } }
+                onClick={ () => loginAdd(emailUser) }
+              >
+                Entrar
+              </button>
+            </Link>
+          </form>
+          <img src={ Money } alt="You wallet login" />
+        </Main>
+        <Footer />
+      </>
     );
   }
 }
