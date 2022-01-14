@@ -1,0 +1,12 @@
+.row-data {
+  background-color: lightgrey;
+  border-right: 2px solid whitesmoke;
+  border-top: 2px solid whitesmoke;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.coin-conversion , .main-coin {
+  font-weight: 900;
+}

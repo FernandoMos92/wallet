@@ -159,6 +159,17 @@ margin-right: 18%;
 margin-top: 30px;
 `;
 
+const Thead = styled.th`
+  width: 100vw;
+  background-color: rgb(80,79,96);
+  color:rgb(141,208,112);
+  border-left: 1px groove darkgray;
+  border-right: 2px groove whitesmoke;
+  border-bottom: 1px groove darkgray;
+  font-size: 15px;
+  padding: 8px;
+`;
+
 export {
   Main,
   FormCur,
@@ -171,4 +182,5 @@ export {
   Sdata,
   Sdiv,
   Syear,
+  Thead,
 };

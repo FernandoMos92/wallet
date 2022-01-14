@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
-
-const Thead = styled.th`
-  font-size: 15px;
-  border: 2px solid black;
-  padding: 5px;
-`;
+import { Thead } from '../../style/styledComponents';
+import '../../style/table.css';
 
 class TableSpent extends Component {
   render() {
@@ -30,14 +25,20 @@ class TableSpent extends Component {
         <tbody>
           { walletData.map((el) => (
             <tr key={ el.id }>
-              <td>{el.description}</td>
-              <td>{el.tag}</td>
-              <td>{el.method}</td>
-              <td>{el.value}</td>
-              <td>{el.exchangeRates[el.currency].name}</td>
-              <td>{(Number(el.exchangeRates[el.currency].ask)).toFixed(2)}</td>
-              <td>{(el.exchangeRates[el.currency].ask * el.value).toFixed(2)}</td>
-              <td>Real</td>
+              <td className="row-data">{el.description}</td>
+              <td className="row-data">{el.tag}</td>
+              <td className="row-data">{el.method}</td>
+              <td className="row-data">{el.value}</td>
+              <td className="row-data main-coin">
+                {el.exchangeRates[el.currency].name}
+              </td>
+              <td className="row-data">
+                {(Number(el.exchangeRates[el.currency].ask)).toFixed(2)}
+              </td>
+              <td className="row-data">
+                {(el.exchangeRates[el.currency].ask * el.value).toFixed(2)}
+              </td>
+              <td className="row-data coin-conversion">Real</td>
             </tr>
           ))}
         </tbody>
