@@ -50,21 +50,44 @@ padding: 15px;
 
 
   input{
+    border-radius: 5px;
+    background-color: rgb(90, 79, 96);
+    color: rgb(141, 255, 11);
     margin: 5px 5px;
+    border-bottom: 4px groove rgb(141, 255 , 11);
+    outline: none;
+    padding: 5px;
+    width: 230px;
+    font-size: 18px;
   }
 
   select {
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(90, 79, 96);
+    color: rgb(141, 255, 11);
     margin: 5px 5px;
+    outline: none;
+    font-size: 18px;
+    padding: 5px;
   }
 
   button {
-    width: 220px;
-    height: 50px;
-    border-radius: 5px;
+    width: 140px;
+    height: 80px;
+    border-radius: 8px;
     text-transform: uppercase;
     background-color: rgb(80,79,96);
     color: rgb(141,208,112);
+    font-size: 14px;
     font-weight: 800;
+    transition: all 0.4 ease-in-out;
+    :hover{
+    background-color: rgb(141,208,112); 
+    color: rgb(80,79,96);
+    transform: scale(0.9);
+  }
   }
 `;
 
