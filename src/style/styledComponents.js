@@ -90,27 +90,6 @@ margin: 0 7px;
 font-weight: 700;
 `;
 
-const Table = styled.table`
-  thead {
-    display: flex;
-    justify-content:space-around;
-    background-color: rgb(80,79,96);
-    color: rgb(141,208,112);
-    tr{
-      width: 100vw;
-      display: flex;
-      justify-content: space-between;
-      th{
-        text-align: center;
-        font-size: 16px;
-        width: 100%;
-        padding: 5px;
-        border: 1px solid white;
-      }
-    }
-  }
-`;
-
 export {
   Main,
   FormCur,
@@ -118,5 +97,4 @@ export {
   Img,
   Span,
   BRL,
-  Table,
 };
