@@ -35,7 +35,8 @@ class FormInput extends Component {
 
   handleClick() {
     const { state: { value, description, currency, method, tag },
-      props: { returnApi, expenses } } = this;
+      props: { returnApi, expenses },
+    } = this;
     const id = expenses.length;
     const obj = {
       id,

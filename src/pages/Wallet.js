@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from '../Components/Header';
 import FormInput from '../Components/FormInput';
+import TableSpent from '../Components/TableSpent';
 
 toast.configure();
 
@@ -19,6 +20,7 @@ class Wallet extends Component {
       <div>
         <Header />
         <FormInput />
+        <TableSpent />
       </div>
     );
   }
