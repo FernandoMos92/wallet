@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { BsCheckAll } from 'react-icons/bs';
 import TrybeImage from '../../image/Trybe_logo-baixa.png';
-import { Hder, Img, Span, BRL } from '../../style/styledComponents';
+import { Semail, Hder, Img, Span, BRL } from '../../style/styledComponents';
 
 class Header extends Component {
   constructor() {
@@ -27,11 +27,11 @@ class Header extends Component {
     return (
       <Hder>
         <Img src={ TrybeImage } alt="Trybe Logo" />
-        <div>
+        <Semail>
           Email:
           <Span data-testid="email-field">{ email }</Span>
           <BsCheckAll style={ { fontSize: 24, color: 'green' } } />
-        </div>
+        </Semail>
         <div>
           Despesas Total: R$
           <span

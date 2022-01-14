@@ -144,19 +144,13 @@ const Ssocial = styled.div`
 const Sdiv = styled.div`
   display: flex;
   flex-flow: row nowrap center;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: space-around;
+  width: 98vw;
 `;
 
 const Sdata = styled.div`
   padding: 10px;
   text-align: center;
-`;
-
-const Syear = styled.p`
-text-align: center;
-margin-right: 18%;
-margin-top: 30px;
 `;
 
 const Thead = styled.th`
@@ -170,6 +164,14 @@ const Thead = styled.th`
   padding: 8px;
 `;
 
+const Semail = styled.div`
+  border-radius: 5px;
+  display: flex;
+  width: 300px;
+  box-shadow: 0 2px 1px rgb(141, 208, 112);
+  padding: 5px;
+`;
+
 export {
   Main,
   FormCur,
@@ -181,6 +183,6 @@ export {
   Ssocial,
   Sdata,
   Sdiv,
-  Syear,
   Thead,
+  Semail,
 };
