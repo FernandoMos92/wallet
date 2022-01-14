@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { Table } from '../../style/styledComponents';
 
 class TableSpent extends Component {
   render() {
     return (
-      <table>
+      <Table>
         <thead>
           <tr>
             <th>Descrição</th>
@@ -17,7 +18,7 @@ class TableSpent extends Component {
             <th>Editar/Excluir</th>
           </tr>
         </thead>
-      </table>
+      </Table>
     );
   }
 }
