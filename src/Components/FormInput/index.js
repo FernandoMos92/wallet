@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { FormCur } from '../../style/styledComponents';
-import { apiThunk } from '../../actions';
+import { apiThunk } from '../../Redux/actions';
 import requestApi from '../../services';
 
 class FormInput extends Component {

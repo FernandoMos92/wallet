@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Main } from '../style/styledComponents';
-import * as act from '../actions';
+import * as act from '../Redux/actions';
 import Money from '../image/undraw_wallet_aym5.svg';
 import '../style/login.css';
 import Footer from '../Components/Footer';

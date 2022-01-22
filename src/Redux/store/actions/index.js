@@ -1,4 +1,4 @@
-import requestApi from '../services/index';
+import requestApi from '../../../services/index';
 
 export const LOGIN_USER = 'LOGIN_USER';
 export const GET_COIN = 'GET_COIN';
