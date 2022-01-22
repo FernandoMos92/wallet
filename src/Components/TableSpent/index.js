@@ -39,6 +39,9 @@ class TableSpent extends Component {
                 {(el.exchangeRates[el.currency].ask * el.value).toFixed(2)}
               </td>
               <td className="row-data coin-conversion">Real</td>
+              <td>
+                <button type="submit"> Excluir </button>
+              </td>
             </tr>
           ))}
         </tbody>

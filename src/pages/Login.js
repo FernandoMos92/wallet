@@ -6,7 +6,7 @@ import { Main } from '../style/styledComponents';
 import * as act from '../Redux/actions';
 import Money from '../image/undraw_wallet_aym5.svg';
 import '../style/login.css';
-import Footer from '../Components/Footer';
+import Footer from '../Components/Footer/index';
 
 class Login extends React.Component {
   constructor() {
