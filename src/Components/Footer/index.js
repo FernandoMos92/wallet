@@ -11,14 +11,14 @@ class Footer extends Component {
             <a
               href="https://github.com/FernandoMos92"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <AiFillGithub className="icon-social-midia " />
             </a>
             <a
               href="https://www.linkedin.com/in/fernando-mos/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <AiFillLinkedin className="icon-social-midia" />
             </a>
