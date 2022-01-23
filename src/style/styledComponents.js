@@ -172,6 +172,18 @@ const Semail = styled.div`
   padding: 5px;
 `;
 
+const Sbutton = styled.button`
+  background-color: rgb(211, 211, 211);
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  width: 100%;
+  height: 60px;
+  border: 1px solid rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export {
   Main,
   FormCur,
@@ -185,4 +197,5 @@ export {
   Sdiv,
   Thead,
   Semail,
+  Sbutton,
 };

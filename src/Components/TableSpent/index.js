@@ -1,22 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
-import { Thead } from '../../style/styledComponents';
+import { Thead, Sbutton } from '../../style/styledComponents';
 import '../../style/table.css';
 import { deleteExpenses } from '../../actions';
-
-const Sbutton = styled.button`
-  background-color: rgb(211, 211, 211);
-  color: rgb(0, 0, 0);
-  font-weight: 800;
-  width: 100%;
-  height: 60px;
-  border: 1px solid rgb(255, 255, 255);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 class TableSpent extends Component {
   constructor(props) {
