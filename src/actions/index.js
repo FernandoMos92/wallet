@@ -1,8 +1,14 @@
-import requestApi from '../../services/index';
+import requestApi from '../services';
 
 export const LOGIN_USER = 'LOGIN_USER';
 export const GET_COIN = 'GET_COIN';
 export const SAVE_EXPENSES = 'SAVE_EXPENSES';
+export const DELETE_ELEMENT = 'DELETE_ELEMENT';
+
+export const deleteExpenses = (id) => ({
+  type: DELETE_ELEMENT,
+  id,
+});
 
 export const userLogin = (email) => ({
   type: LOGIN_USER,

@@ -3,10 +3,22 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Thead } from '../../style/styledComponents';
 import '../../style/table.css';
+import { deleteExpenses } from '../../actions';
 
 class TableSpent extends Component {
+  constructor(props) {
+    super(props);
+    this.handleDelte = this.handleDelte.bind(this);
+  }
+
+  handleDelte({ target }) {
+    const { deleteDispatch } = this.props;
+    deleteDispatch(target.id);
+  }
+
   render() {
     const { walletData } = this.props;
+    const { handleDelte } = this;
     return (
       <table>
         <thead>
@@ -23,7 +35,7 @@ class TableSpent extends Component {
           </tr>
         </thead>
         <tbody>
-          { walletData.map((el) => (
+          { walletData.map((el, index) => (
             <tr key={ el.id }>
               <td className="row-data">{el.description}</td>
               <td className="row-data">{el.tag}</td>
@@ -40,7 +52,14 @@ class TableSpent extends Component {
               </td>
               <td className="row-data coin-conversion">Real</td>
               <td>
-                <button type="submit"> Excluir </button>
+                <button
+                  data-testid="delete-btn"
+                  id={ index }
+                  type="submit"
+                  onClick={ handleDelte }
+                >
+                  Excluir
+                </button>
               </td>
             </tr>
           ))}
@@ -51,11 +70,15 @@ class TableSpent extends Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  deleteDispatch: (id) => dispatch(deleteExpenses(id)),
+});
+
 const mapStateToProps = (state) => ({
   walletData: state.wallet.expenses,
 });
 
-export default connect(mapStateToProps)(TableSpent);
+export default connect(mapStateToProps, mapDispatchToProps)(TableSpent);
 
 TableSpent.propTypes = {
   walletData: PropTypes.arrayOf(PropTypes.shape({
@@ -65,4 +88,5 @@ TableSpent.propTypes = {
     method: PropTypes.string,
     tag: PropTypes.string,
   })).isRequired,
+  deleteDispatch: PropTypes.func.isRequired,
 };

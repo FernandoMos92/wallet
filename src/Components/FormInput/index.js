@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { FormCur } from '../../style/styledComponents';
-import { apiThunk } from '../../Redux/actions';
+import { apiThunk } from '../../actions';
 import requestApi from '../../services';
 
 class FormInput extends Component {
@@ -170,7 +170,7 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, mapDispatchToProps)(FormInput);
 
 FormInput.propTypes = {
-  currencies: PropTypes.arrayOf([]).isRequired,
+  currencies: PropTypes.arrayOf(PropTypes.any).isRequired,
   returnApi: PropTypes.func.isRequired,
   expenses: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
