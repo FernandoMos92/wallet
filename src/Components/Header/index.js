@@ -26,7 +26,6 @@ class Header extends Component {
     const { props: { email } } = this;
     return (
       <Hder>
-        <Img src={ TrybeImage } alt="Trybe Logo" />
         <Semail>
           Email:
           <Span data-testid="email-field">{ email }</Span>
